@@ -21,7 +21,7 @@ def check_guess(guess, secret):
     if guess == secret:
         return "Win", "🎉 Correct!"
     if guess > secret:
-        return "Too High", "📉 Go LOWER!"       #FIXED: The logic here was broken due to words being used when guess was too high, it woukd return go higher and vice versa 
+        return "Too High", "📉 Go LOWER!"       #FIXED: The logic here was broken due to words being used when guess was too high, it would return go higher and vice versa 
     return "Too Low", "📈 Go HIGHER!"
 
 
