@@ -1,5 +1,6 @@
 import random
 import streamlit as st
+from logic_utils import check_guess
 
 def get_range_for_difficulty(difficulty: str):
     if difficulty == "Easy":
@@ -28,15 +29,6 @@ def parse_guess(raw: str):
 
     return True, value, None
 
-
-def check_guess(guess, secret):
-    if guess == secret:
-        return "Win", "🎉 Correct!"
-    if guess > secret:
-        return "Too High", "📉 Go LOWER!"       #FIXED: The logic here was broken due to words being used when guess was too high, it woukd return go higher and vice versa 
-    return "Too Low", "📈 Go HIGHER!"
-
-         
 
 def update_score(current_score: int, outcome: str, attempt_number: int):
     if outcome == "Win":
