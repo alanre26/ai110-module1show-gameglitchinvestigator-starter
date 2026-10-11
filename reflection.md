@@ -8,15 +8,21 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - List at least two concrete bugs you noticed at the start  
   (for example: "the hints were backwards").
 
+  -The first bug was hints were completely wrong, on normal mode i submitted 5 guesses starting from 5 and going down by one each guess. 5,4,3,2,1. It kept saying go lower. None were the coorect answer and for normal it starts from 1-20 so any lower would have been impossible 
+  -Second concrete bug is the game not updatiing at all when finshing the game for the first time, it does not allow for any more chances once first game is done. the button new game does not give any more new attempts but it does update the secret.
+  - another bug is the games for both easy and normal they are capped at 1-10 and 1-100 the game secret is almost always above the cap numbers for easy. 
+  - game mode hard is only 1-50 which is the opposite of and thats what normal should be.
+
 **Bug Reproduction Log**
 
 Document at least 3 bugs you found. Add rows as needed.
 
 | Input | Expected Behavior | Actual Behavior | Console Output / Error |
 |-------|-------------------|-----------------|------------------------|
-| | | | |
-| | | | |
-| | | | |
+| New game | New attempts given| No new attempts given| No output only update to new number|
+| Diffcutly Hard| Should Give range 1-100| Gives range 1-50| "GO HIGHER" when submitting the max range for hard which is capped at 50|
+| guess of 55| "GO HIGHER" | "GO LOWER"| none|
+|random guesses between 1-100| game should save and accordinly reflect number of attempts| does not save and gives inaccurate attempts left| Game over.  Guess a number between 1 and 100. Attempts left: 1Start a new game to try again|
 
 ---
 
