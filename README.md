@@ -33,21 +33,29 @@ It wrote the code, ran away, and now the game is unplayable.
 
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+1. User Decides which setting diffculty he will like, easy normal or hard. 
+2. Easy Gets 6 Attempts, Normal gets 8, Hard gets 5
+3. User will then enter a guess number of 1( Secret number is 14)
+4. Game returns too low! Go higher!
+5. User enters 20 
+6. Game returns too high! Go lower!
+7. User enters 6 more attemps wrong and the game ends with no attempts left 
+8. User clicks New Game. The secret number changes, but the game still says "Game over. Start a new game to try again." (the New Game bug isn't fixed yet)
+9. User refreshes the page to start a fresh game, guesses the correct number, and the game ends with You won! The secret was 74. 
 
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
 
 ## 🧪 Test Results
 
-```
-# Paste your pytest output here, e.g.:
-# pytest tests/
-# ========================= X passed in 0.XXs =========================
-```
+============================================================================ test session starts =============================================================================
+platform darwin -- Python 3.14.7, pytest-9.1.1, pluggy-1.6.0
+rootdir: /Users/alanreyes/ai110-module1show-gameglitchinvestigator-starter
+plugins: anyio-4.15.1
+collected 4 items                                                                                                                                                            
+
+tests/test_game_logic.py ....                                                                                                                                          [100%]
+
+============================================================================= 4 passed in 0.01s ==============================================================================
 
 ## 🚀 Stretch Features
 

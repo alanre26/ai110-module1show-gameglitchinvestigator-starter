@@ -22,7 +22,7 @@ Document at least 3 bugs you found. Add rows as needed.
 | New game | New attempts given| No new attempts given| No output only update to new number|
 | Diffcutly Hard| Should Give range 1-100| Gives range 1-50| "GO HIGHER" when submitting the max range for hard which is capped at 50|
 | guess of 55| "GO HIGHER" | "GO LOWER"| none|
-|random guesses between 1-100| game should save and accordinly reflect number of attempts| does not save and gives inaccurate attempts left| Game over.  Guess a number between 1 and 100. Attempts left: 1Start a new game to try again|
+|random guesses between 1-100| game should save and accordinly to reflect number of attempts| does not save and gives inaccurate attempts left| Game over.  Guess a number between 1 and 100. Attempts left: 1, Start a new game to try again|
 
 ---
 
@@ -62,11 +62,20 @@ AI helped me with both. I had it write the new test aimed at the high/low bug, a
 
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
 
+Every time you click a button or type something in a Streamlit app, it reruns the whole Python script from top to bottom, kind of like refreshing the page. That means any normal variable gets wiped and starts over, so if the secret number was just a regular variable, the game would pick a new one after every guess. Session state is like a notebook the app keeps between reruns, where it saves things like the secret, attempts, score, and history so they survive. In app.py, that's why each value is set with "if "secret" not in st.session_state", so it only gets set the first time and not on every rerun. This also explains the New Game bug I found: the button resets the secret and attempts in session state but never sets status back to "playing", so the saved "won" or "lost" status keeps the game stuck after the rerun.
+
 ---
 
 ## 5. Looking ahead: your developer habits
 
 - What is one habit or strategy from this project that you want to reuse in future labs or projects?
   - This could be a testing habit, a prompting strategy, or a way you used Git.
+
+  A habit or strategy would be using the @ buttton and then file to reference a file with claude> it gives it direct context and combined with highlighting logic errors it allows me to understand the disruption in code. A prompting strategy i like to use is a checklist , like a test case confirming i have done all required tasks and in order.
+
 - What is one thing you would do differently next time you work with AI on a coding task?
+I would have it parse and tell me which lines are also connnected to the error. For example if a variable like guess, it can be connected all through the code sometimes being referenced as a string when it should only be compared as a int. 
+
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+
+It opened my eyes on the limitless ways AI can alter my code. It has access to CRUD operations, so long as you have a prompt stating it must operate in these bounds it stays within. More importantly i believe the way you format the prompt gives a complete different answer for your code.
